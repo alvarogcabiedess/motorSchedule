@@ -32,21 +32,47 @@
         tr:nth-child(even) {
             background-color: #f2f2f2;
         }
+        .filter-container {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background: white;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+            transition: left 0.3s;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .filter-container.show {
+            left: 0;
+        }
+        .filter-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
-    <h1>Calendario de Grandes Premios</h1>
-    
-    <div>
+    <button class="filter-toggle" onclick="toggleFilters()">Filtros</button>
+    <div class="filter-container" id="filterContainer">
+        <h3>Filtrar por categoría</h3>
         <label><input type="checkbox" class="category-filter" value="F1" checked> F1</label>
         <label><input type="checkbox" class="category-filter" value="F2" checked> F2</label>
         <label><input type="checkbox" class="category-filter" value="F3" checked> F3</label>
         <label><input type="checkbox" class="category-filter" value="NASCAR" checked> NASCAR</label>
         <label><input type="checkbox" class="category-filter" value="MotoGP" checked> MotoGP</label>
-    </div>
-    
-    <div>
-        <label>Mostrar eventos de: </label>
+        <label><input type="checkbox" class="category-filter" value="Moto2" checked> Moto2</label>
+        <label><input type="checkbox" class="category-filter" value="Moto3" checked> Moto3</label>
+        <h3>Mostrar eventos de:</h3>
         <select id="timeFilter">
             <option value="weekend">Próximo fin de semana</option>
             <option value="6days">Próximos 6 días</option>
@@ -55,7 +81,7 @@
             <option value="year">Año entero</option>
         </select>
     </div>
-    
+    <h1>Calendario de Grandes Premios</h1>
     <table id="scheduleTable">
         <thead>
             <tr>
@@ -75,8 +101,10 @@
         <tbody>
         </tbody>
     </table>
-    
     <script>
+        function toggleFilters() {
+            document.getElementById('filterContainer').classList.toggle('show');
+        }
         async function loadSchedule() {
             const response = await fetch('https://alvarogcabiedess.github.io/motorSchedule/horarios.csv');
             const data = await response.text();
@@ -89,6 +117,12 @@
                 const cols = row.split(',');
                 if (cols.length < 11) return;
                 
+                let dateParts = cols[0].split(' ');
+                let day = dateParts[0].split('-')[0];
+                let month = dateParts[1].toLowerCase();
+                let monthMap = { 'marzo': 2, 'abril': 3 };
+                let formattedDate = new Date(2025, monthMap[month], parseInt(day));
+                
                 const tr = document.createElement('tr');
                 cols.forEach(col => {
                     const td = document.createElement('td');
@@ -98,13 +132,10 @@
                 tableBody.appendChild(tr);
             });
         }
-        
         document.querySelectorAll('.category-filter').forEach(checkbox => {
             checkbox.addEventListener('change', filterTable);
         });
-        
         document.getElementById('timeFilter').addEventListener('change', filterTable);
-        
         function filterTable() {
             const selectedCategories = Array.from(document.querySelectorAll('.category-filter:checked')).map(cb => cb.value);
             const selectedTime = document.getElementById('timeFilter').value;
@@ -114,10 +145,8 @@
                 const category = row.cells[3].textContent.trim();
                 const date = row.cells[0].textContent.trim();
                 const eventDate = parseDate(date);
-                
                 const now = new Date();
                 let show = selectedCategories.includes(category);
-                
                 if (selectedTime === 'weekend') {
                     show = show && isNextWeekend(eventDate);
                 } else if (selectedTime === '6days') {
@@ -127,30 +156,9 @@
                 } else if (selectedTime === '3months') {
                     show = show && isWithinDays(eventDate, 90);
                 }
-                
                 row.style.display = show ? '' : 'none';
             });
         }
-        
-        function parseDate(dateStr) {
-            const parts = dateStr.split('-');
-            return new Date(2025, parseInt(parts[1]) - 1, parseInt(parts[0]));
-        }
-        
-        function isNextWeekend(date) {
-            const now = new Date();
-            const nextSaturday = new Date();
-            nextSaturday.setDate(now.getDate() + (6 - now.getDay()));
-            return date >= nextSaturday && date <= nextSaturday.setDate(nextSaturday.getDate() + 1);
-        }
-        
-        function isWithinDays(date, days) {
-            const now = new Date();
-            const future = new Date();
-            future.setDate(now.getDate() + days);
-            return date >= now && date <= future;
-        }
-        
         loadSchedule();
     </script>
 </body>
