@@ -36,12 +36,33 @@
 </head>
 <body>
     <h1>Calendario de Grandes Premios</h1>
+    
+    <div>
+        <label><input type="checkbox" class="category-filter" value="F1" checked> F1</label>
+        <label><input type="checkbox" class="category-filter" value="F2" checked> F2</label>
+        <label><input type="checkbox" class="category-filter" value="F3" checked> F3</label>
+        <label><input type="checkbox" class="category-filter" value="NASCAR" checked> NASCAR</label>
+        <label><input type="checkbox" class="category-filter" value="MotoGP" checked> MotoGP</label>
+    </div>
+    
+    <div>
+        <label>Mostrar eventos de: </label>
+        <select id="timeFilter">
+            <option value="weekend">Próximo fin de semana</option>
+            <option value="6days">Próximos 6 días</option>
+            <option value="month">Un mes</option>
+            <option value="3months">Tres meses</option>
+            <option value="year">Año entero</option>
+        </select>
+    </div>
+    
     <table id="scheduleTable">
         <thead>
             <tr>
                 <th>Fecha</th>
                 <th>Gran Premio</th>
                 <th>País</th>
+                <th>Categoría</th>
                 <th>Libres 1</th>
                 <th>Libres 2</th>
                 <th>Libres 3</th>
@@ -54,6 +75,7 @@
         <tbody>
         </tbody>
     </table>
+    
     <script>
         async function loadSchedule() {
             const response = await fetch('https://alvarogcabiedess.github.io/motorSchedule/horarios.csv');
@@ -65,7 +87,7 @@
             
             rows.forEach(row => {
                 const cols = row.split(',');
-                if (cols.length < 10) return;
+                if (cols.length < 11) return;
                 
                 const tr = document.createElement('tr');
                 cols.forEach(col => {
@@ -75,6 +97,58 @@
                 });
                 tableBody.appendChild(tr);
             });
+        }
+        
+        document.querySelectorAll('.category-filter').forEach(checkbox => {
+            checkbox.addEventListener('change', filterTable);
+        });
+        
+        document.getElementById('timeFilter').addEventListener('change', filterTable);
+        
+        function filterTable() {
+            const selectedCategories = Array.from(document.querySelectorAll('.category-filter:checked')).map(cb => cb.value);
+            const selectedTime = document.getElementById('timeFilter').value;
+            
+            const rows = document.querySelectorAll('#scheduleTable tbody tr');
+            rows.forEach(row => {
+                const category = row.cells[3].textContent.trim();
+                const date = row.cells[0].textContent.trim();
+                const eventDate = parseDate(date);
+                
+                const now = new Date();
+                let show = selectedCategories.includes(category);
+                
+                if (selectedTime === 'weekend') {
+                    show = show && isNextWeekend(eventDate);
+                } else if (selectedTime === '6days') {
+                    show = show && isWithinDays(eventDate, 6);
+                } else if (selectedTime === 'month') {
+                    show = show && isWithinDays(eventDate, 30);
+                } else if (selectedTime === '3months') {
+                    show = show && isWithinDays(eventDate, 90);
+                }
+                
+                row.style.display = show ? '' : 'none';
+            });
+        }
+        
+        function parseDate(dateStr) {
+            const parts = dateStr.split('-');
+            return new Date(2025, parseInt(parts[1]) - 1, parseInt(parts[0]));
+        }
+        
+        function isNextWeekend(date) {
+            const now = new Date();
+            const nextSaturday = new Date();
+            nextSaturday.setDate(now.getDate() + (6 - now.getDay()));
+            return date >= nextSaturday && date <= nextSaturday.setDate(nextSaturday.getDate() + 1);
+        }
+        
+        function isWithinDays(date, days) {
+            const now = new Date();
+            const future = new Date();
+            future.setDate(now.getDate() + days);
+            return date >= now && date <= future;
         }
         
         loadSchedule();
