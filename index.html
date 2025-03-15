@@ -45,8 +45,10 @@
                 <th>Libres 1</th>
                 <th>Libres 2</th>
                 <th>Libres 3</th>
-                <th>Clasificación</th>
-                <th>Carrera</th>
+                <th>Clasificación Local</th>
+                <th>Clasificación España</th>
+                <th>Carrera Local</th>
+                <th>Carrera España</th>
             </tr>
         </thead>
         <tbody>
@@ -63,7 +65,7 @@
             
             rows.forEach(row => {
                 const cols = row.split(',');
-                if (cols.length < 8) return;
+                if (cols.length < 10) return;
                 
                 const tr = document.createElement('tr');
                 cols.forEach(col => {
