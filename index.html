@@ -43,6 +43,25 @@
         tr:nth-child(even) {
             background-color: #f2f2f2;
         }
+
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        .tab-btn {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .tab-btn:hover {
+            background-color: #0056b3;
+        }
+
         @media (max-width: 600px) {
             table {
                 font-size: 12px;
@@ -79,18 +98,30 @@
         <button onclick="loadSchedule()">Cargar Eventos</button>
     </div>
 
-    <table id="scheduleTable">
-        <thead>
-            <tr>
-                <th>Categoría</th>
-                <th>Fecha</th>
-                <th>Gran Premio</th>
-                <th>Nombre</th>
-                <th>Hora España</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+    <div class="tab-container">
+        <button class="tab-btn" onclick="showTab('schedule')">Lista</button>
+        <button class="tab-btn" onclick="showTab('calendar')">Calendario</button>
+    </div>
+    
+    <div id="scheduleTab">
+        <table id="scheduleTable">
+            <thead>
+                <tr>
+                    <th>Categoría</th>
+                    <th>Fecha</th>
+                    <th>Gran Premio</th>
+                    <th>Nombre</th>
+                    <th>Hora España</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    
+    <div id="calendarTab" style="display:none;">
+        <div id="calendarContainer"></div>
+    </div>
+
 
     <script>
         async function loadSchedule() {
@@ -155,7 +186,49 @@
             return date >= now && date <= future;
         }
 
+        function showTab(tab) {
+            document.getElementById('scheduleTab').style.display = tab === 'schedule' ? 'block' : 'none';
+            document.getElementById('calendarTab').style.display = tab === 'calendar' ? 'block' : 'none';
+        }
+
+
         loadSchedule();
+        
+        function generateCalendar(events) {
+            const calendarContainer = document.getElementById('calendarContainer');
+            calendarContainer.innerHTML = '';
+        
+            const groupedByMonth = {};
+            
+            events.forEach(event => {
+                const eventDate = new Date(event.fecha);
+                const monthKey = eventDate.toLocaleString('es-ES', { month: 'long', year: 'numeric' });
+        
+                if (!groupedByMonth[monthKey]) {
+                    groupedByMonth[monthKey] = [];
+                }
+                groupedByMonth[monthKey].push(event);
+            });
+        
+            Object.keys(groupedByMonth).forEach(month => {
+                const monthDiv = document.createElement('div');
+                monthDiv.innerHTML = `<h2>${month}</h2>`;
+                const ul = document.createElement('ul');
+        
+                groupedByMonth[month].forEach(event => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<strong>${event.fecha}</strong> - ${event.nombre} (${event.hora})`;
+                    ul.appendChild(li);
+                });
+        
+                monthDiv.appendChild(ul);
+                calendarContainer.appendChild(monthDiv);
+            });
+        }
+        
+        // Llama a la función dentro de loadSchedule() después de llenar la tabla
+        loadSchedule().then(events => generateCalendar(events));
+
     </script>
 </body>
 </html>
