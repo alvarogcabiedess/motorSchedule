@@ -1,41 +1,142 @@
-Categoría,Fecha,Gran Premio,Nombre,Hora Local,Hora España
-F1,14 marzo,Australia,Libres 1,02:30,16:30
-F1,15 marzo,Australia,Libres 2,05:00,19:00
-F1,16 marzo,Australia,Libres 3,02:30,16:30
-F1,16 marzo,Australia,Clasificación,16:00,06:00
-F1,17 marzo,Australia,Carrera,15:00,05:00
-F1,21 marzo,China,Libres 1,04:30,21:30
-F1,22 marzo,China,Clasificación Sprint,08:30,02:30
-F1,23 marzo,China,Sprint,04:00,22:00
-F1,23 marzo,China,Clasificación,15:00,08:00
-F1,24 marzo,China,Carrera,15:00,08:00
-F1,4 abril,Japón,Libres 1,04:30,21:30
-F1,5 abril,Japón,Libres 2,08:00,00:00
-F1,6 abril,Japón,Libres 3,04:30,21:30
-F1,6 abril,Japón,Clasificación,15:00,08:00
-F1,7 abril,Japón,Carrera,14:00,07:00
-F1,11 abril,Bahrein,Libres 1,14:30,12:30
-F1,12 abril,Bahrein,Libres 2,17:00,15:00
-F1,13 abril,Bahrein,Libres 3,14:30,12:30
-F1,13 abril,Bahrein,Clasificación,19:00,18:00
-F1,14 abril,Bahrein,Carrera,18:00,17:00
-F1,18 abril,Arabia Saudí,Libres 1,15:30,14:30
-F1,19 abril,Arabia Saudí,Libres 2,19:00,18:00
-F1,20 abril,Arabia Saudí,Libres 3,15:30,14:30
-F1,20 abril,Arabia Saudí,Clasificación,20:00,19:00
-F1,21 abril,Arabia Saudí,Carrera,20:00,19:00
-F1,2 mayo,Miami,Libres 1,18:30,00:30
-F1,3 mayo,Miami,Clasificación Sprint,22:30,04:30
-F1,4 mayo,Miami,Sprint,18:00,00:00
-F1,4 mayo,Miami,Clasificación,16:00,22:00
-F1,5 mayo,Miami,Carrera,16:00,22:00
-F1,16 mayo,Emilia Romagna,Libres 1,13:30,13:30
-F1,17 mayo,Emilia Romagna,Libres 2,17:00,17:00
-F1,18 mayo,Emilia Romagna,Libres 3,12:30,12:30
-F1,18 mayo,Emilia Romagna,Clasificación,16:00,16:00
-F1,19 mayo,Emilia Romagna,Carrera,15:00,15:00
-F1,23 mayo,Mónaco,Libres 1,13:30,13:30
-F1,24 mayo,Mónaco,Libres 2,17:00,17:00
-F1,25 mayo,Mónaco,Libres 3,12:30,12:30
-F1,25 mayo,Mónaco,Clasificación,16:00,16:00
-F1,26 mayo,Mónaco,Carrera,15:00,15:00
+Categoría,Fecha,Gran Premio,Nombre,Hora España  
+F1,14-03-2025,Australia,Libres 1,05:00  
+F1,15-03-2025,Australia,Libres 2,08:00  
+F1,16-03-2025,Australia,Libres 3,05:00  
+F1,16-03-2025,Australia,Clasificación,06:00  
+F1,16-03-2025,Australia,Carrera,05:00  
+
+F1,21-03-2025,China,Libres 1,04:30  
+F1,22-03-2025,China,Libres 2,08:30  
+F1,22-03-2025,China,Clasificación Sprint,04:00  
+F1,22-03-2025,China,Carrera Sprint,15:00  
+F1,23-03-2025,China,Clasificación,08:00  
+F1,23-03-2025,China,Carrera,08:00  
+
+F1,04-04-2025,Japón,Libres 1,04:30  
+F1,05-04-2025,Japón,Libres 2,08:00  
+F1,06-04-2025,Japón,Libres 3,04:30  
+F1,06-04-2025,Japón,Clasificación,08:00  
+F1,06-04-2025,Japón,Carrera,07:00  
+
+F1,11-04-2025,Bahrein,Libres 1,14:30  
+F1,12-04-2025,Bahrein,Libres 2,17:00  
+F1,13-04-2025,Bahrein,Libres 3,14:30  
+F1,13-04-2025,Bahrein,Clasificación,18:00  
+F1,13-04-2025,Bahrein,Carrera,17:00  
+
+F1,18-04-2025,Arabia Saudí,Libres 1,15:30  
+F1,19-04-2025,Arabia Saudí,Libres 2,19:00  
+F1,20-04-2025,Arabia Saudí,Libres 3,15:30  
+F1,20-04-2025,Arabia Saudí,Clasificación,19:00  
+F1,20-04-2025,Arabia Saudí,Carrera,19:00  
+
+F1,02-05-2025,Miami,Libres 1,18:30  
+F1,03-05-2025,Miami,Clasificación Sprint,22:30  
+F1,03-05-2025,Miami,Carrera Sprint,18:00  
+F1,04-05-2025,Miami,Libres 2,16:00  
+F1,04-05-2025,Miami,Clasificación,22:00  
+F1,04-05-2025,Miami,Carrera,22:00  
+
+F1,16-05-2025,Emilia Romagna,Libres 1,13:30  
+F1,17-05-2025,Emilia Romagna,Libres 2,17:00  
+F1,18-05-2025,Emilia Romagna,Libres 3,12:30  
+F1,18-05-2025,Emilia Romagna,Clasificación,16:00  
+F1,18-05-2025,Emilia Romagna,Carrera,15:00  
+
+F1,23-05-2025,Mónaco,Libres 1,13:30  
+F1,24-05-2025,Mónaco,Libres 2,17:00  
+F1,25-05-2025,Mónaco,Libres 3,12:30  
+F1,25-05-2025,Mónaco,Clasificación,16:00  
+F1,25-05-2025,Mónaco,Carrera,15:00  
+
+F1,30-05-2025,España,Libres 1,13:30  
+F1,31-05-2025,España,Libres 2,17:00  
+F1,01-06-2025,España,Libres 3,12:30  
+F1,01-06-2025,España,Clasificación,16:00  
+F1,01-06-2025,España,Carrera,15:00  
+
+F1,13-06-2025,Canadá,Libres 1,19:30  
+F1,14-06-2025,Canadá,Libres 2,23:00  
+F1,15-06-2025,Canadá,Libres 3,18:30  
+F1,15-06-2025,Canadá,Clasificación,22:00  
+F1,15-06-2025,Canadá,Carrera,20:00  
+
+F1,27-06-2025,Austria,Libres 1,13:30  
+F1,28-06-2025,Austria,Libres 2,17:00  
+F1,29-06-2025,Austria,Libres 3,12:30  
+F1,29-06-2025,Austria,Clasificación,16:00  
+F1,29-06-2025,Austria,Carrera,15:00  
+
+F1,04-07-2025,Gran Bretaña,Libres 1,13:30  
+F1,05-07-2025,Gran Bretaña,Libres 2,17:00  
+F1,06-07-2025,Gran Bretaña,Libres 3,12:30  
+F1,06-07-2025,Gran Bretaña,Clasificación,16:00  
+F1,06-07-2025,Gran Bretaña,Carrera,16:00  
+
+F1,18-07-2025,Hungría,Libres 1,13:30  
+F1,19-07-2025,Hungría,Libres 2,17:00  
+F1,20-07-2025,Hungría,Libres 3,12:30  
+F1,20-07-2025,Hungría,Clasificación,16:00  
+F1,20-07-2025,Hungría,Carrera,15:00  
+
+F1,25-07-2025,Bélgica,Libres 1,13:30  
+F1,26-07-2025,Bélgica,Libres 2,17:00  
+F1,27-07-2025,Bélgica,Libres 3,12:30  
+F1,27-07-2025,Bélgica,Clasificación,16:00  
+F1,27-07-2025,Bélgica,Carrera,15:00  
+
+F1,29-08-2025,Países Bajos,Libres 1,13:30  
+F1,30-08-2025,Países Bajos,Libres 2,17:00  
+F1,31-08-2025,Países Bajos,Libres 3,12:30  
+F1,31-08-2025,Países Bajos,Clasificación,16:00  
+F1,31-08-2025,Países Bajos,Carrera,15:00  
+
+F1,05-09-2025,Italia,Libres 1,13:30  
+F1,06-09-2025,Italia,Libres 2,17:00  
+F1,07-09-2025,Italia,Libres 3,12:30  
+F1,07-09-2025,Italia,Clasificación,16:00  
+F1,07-09-2025,Italia,Carrera,15:00  
+
+F1,19-09-2025,Azerbaiyán,Libres 1,13:30  
+F1,20-09-2025,Azerbaiyán,Libres 2,17:00  
+F1,21-09-2025,Azerbaiyán,Libres 3,12:30  
+F1,21-09-2025,Azerbaiyán,Clasificación,16:00  
+F1,21-09-2025,Azerbaiyán,Carrera,15:00  
+
+F1,03-10-2025,Singapur,Libres 1,11:30  
+F1,04-10-2025,Singapur,Libres 2,15:00  
+F1,05-10-2025,Singapur,Libres 3,12:30  
+F1,05-10-2025,Singapur,Clasificación,16:00  
+F1,05-10-2025,Singapur,Carrera,14:00  
+
+F1,10-10-2025,Estados Unidos,Libres 1,18:30  
+F1,11-10-2025,Estados Unidos,Clasificación Sprint,22:30  
+F1,11-10-2025,Estados Unidos,Carrera Sprint,18:00  
+F1,12-10-2025,Estados Unidos,Libres 2,16:00  
+F1,12-10-2025,Estados Unidos,Clasificación,22:00  
+F1,12-10-2025,Estados Unidos,Carrera,21:00  
+
+F1,24-10-2025,México,Libres 1,19:30  
+F1,25-10-2025,México,Libres 2,23:00  
+F1,26-10-2025,México,Libres 3,18:30  
+F1,26-10-2025,México,Clasificación,22:00  
+F1,26-10-2025,México,Carrera,21:00  
+
+F1,07-11-2025,Brasil,Libres 1,16:30  
+F1,08-11-2025,Brasil,Clasificación Sprint,20:30  
+F1,08-11-2025,Brasil,Carrera Sprint,16:00  
+F1,09-11-2025,Brasil,Libres 2,14:00  
+F1,09-11-2025,Brasil,Clasificación,20:00  
+F1,09-11-2025,Brasil,Carrera,19:00  
+
+F1,20-11-2025,Las Vegas,Libres 1,04:30  
+F1,21-11-2025,Las Vegas,Libres 2,08:00  
+F1,22-11-2025,Las Vegas,Libres 3,04:30  
+F1,22-11-2025,Las Vegas,Clasificación,08:00  
+F1,23-11-2025,Las Vegas,Carrera,07:00  
+
+F1,28-11-2025,Abu Dabi,Libres 1,11:30  
+F1,29-11-2025,Abu Dabi,Libres 2,15:00  
+F1,30-11-2025,Abu Dabi,Libres 3,12:30  
+F1,30-11-2025,Abu Dabi,Clasificación,16:00  
+F1,30-11-2025,Abu Dabi,Carrera,14:00  
