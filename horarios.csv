@@ -1,25 +1,43 @@
-Fecha,Gran Premio,Pais,Libres 1,Libres 2,Libres 3,Clasificación Local,Clasificación España,Carrera Local,Carrera España
-14-16 marzo,Australia,Australia,02:30,05:00,02:30,16:00,06:00,15:00,05:00
-21-23 marzo,China,China,04:30,08:30 (qualy sprint),04:00 (sprint),15:00,08:00,15:00,08:00
-4-6 abril,Japón,Japón,04:30,08:00,04:30,15:00,08:00,14:00,07:00
-11-13 abril,Bahrein,Bahrein,14:30,17:00,14:30,19:00,18:00,18:00,17:00
-18-20 abril,Arabia Saudí,Arabia Saudí,15:30,19:00,15:30,20:00,19:00,20:00,19:00
-2-4 mayo,Miami,Estados Unidos,18:30,22:30 (sprint qualy),18:00 (sprint),16:00,22:00,16:00,22:00
-16-18 mayo,Emilia Romagna,Italia,13:30,17:00,12:30,16:00,16:00,15:00,15:00
-23-25 mayo,Mónaco,Mónaco,13:30,17:00,12:30,16:00,16:00,15:00,15:00
-30 mayo-1 junio,España,España,13:30,17:00,12:30,16:00,16:00,15:00,15:00
-13-15 junio,Canadá,Canadá,19:30,23:00,18:30,16:00,22:00,14:00,20:00
-27-29 junio,Austria,Austria,13:30,17:00,12:30,16:00,16:00,15:00,15:00
-4-6 julio,Gran Bretaña,Reino Unido,13:30,17:00,12:30,15:00,16:00,15:00,16:00
-25-27 julio,Bélgica,Bélgica,12:30,16:30 (sprint qualy),12:00 (sprint),16:00,16:00,15:00,15:00
-1-3 agosto,Hungría,Hungría,13:30,17:00,12:30,16:00,16:00,15:00,15:00
-29-31 agosto,Países Bajos,Países Bajos,12:30,16:00,11:30,15:00,15:00,15:00,15:00
-5-7 septiembre,Italia,Italia,13:30,17:00,12:30,16:00,16:00,15:00,15:00
-19-21 septiembre,Azerbaiyán,Azerbaiyán,10:30,14:00,10:30,16:00,14:00,15:00,13:00
-3-5 octubre,Singapur,Singapur,11:30,15:00,11:30,21:00,15:00,20:00,14:00
-17-19 octubre,Austin,Estados Unidos,19:30,23:30 (qualy sprint),20:00 (sprint),17:00,00:00,14:00,21:00
-24-26 octubre,México,México,19:30,23:00,18:30,15:00,22:00,14:00,21:00
-7-9 noviembre,Brasil,Brasil,15:30,19:30 (qualy sprint),15:00 (sprint),15:00,19:00,14:00,18:00
-20-22 noviembre,Las Vegas,Estados Unidos,01:30,05:00,01:30,20:00,05:00,20:00,05:00
-28-30 noviembre,Qatar,Qatar,14:30,19:30 (sprint qualy),15:00 (sprint),21:00,19:00,19:00,17:00
-5-7 diciembre,Abu Dhabi,Emiratos Árabes Unidos,10:30,14:00,11:30,18:00,15:00,17:00,14:00
+Categoría,Fecha,Gran Premio,Nombre,Hora Local,Hora España
+F1,14 marzo,Australia,Libres 1,02:30,16:30
+F1,15 marzo,Australia,Libres 2,05:00,19:00
+F1,16 marzo,Australia,Libres 3,02:30,16:30
+F1,16 marzo,Australia,Clasificación,16:00,06:00
+F1,17 marzo,Australia,Carrera,15:00,05:00
+F1,21 marzo,China,Libres 1,04:30,21:30
+F1,22 marzo,China,Clasificación Sprint,08:30,02:30
+F1,23 marzo,China,Sprint,04:00,22:00
+F1,23 marzo,China,Clasificación,15:00,08:00
+F1,24 marzo,China,Carrera,15:00,08:00
+F1,4 abril,Japón,Libres 1,04:30,21:30
+F1,5 abril,Japón,Libres 2,08:00,00:00
+F1,6 abril,Japón,Libres 3,04:30,21:30
+F1,6 abril,Japón,Clasificación,15:00,08:00
+F1,7 abril,Japón,Carrera,14:00,07:00
+F1,11 abril,Bahrein,Libres 1,14:30,12:30
+F1,12 abril,Bahrein,Libres 2,17:00,15:00
+F1,13 abril,Bahrein,Libres 3,14:30,12:30
+F1,13 abril,Bahrein,Clasificación,19:00,18:00
+F1,14 abril,Bahrein,Carrera,18:00,17:00
+F1,18 abril,Arabia Saudí,Libres 1,15:30,14:30
+F1,19 abril,Arabia Saudí,Libres 2,19:00,18:00
+F1,20 abril,Arabia Saudí,Libres 3,15:30,14:30
+F1,20 abril,Arabia Saudí,Clasificación,20:00,19:00
+F1,21 abril,Arabia Saudí,Carrera,20:00,19:00
+F1,2 mayo,Miami,Libres 1,18:30,00:30
+F1,3 mayo,Miami,Clasificación Sprint,22:30,04:30
+F1,4 mayo,Miami,Sprint,18:00,00:00
+F1,4 mayo,Miami,Clasificación,16:00,22:00
+F1,5 mayo,Miami,Carrera,16:00,22:00
+F1,16 mayo,Emilia Romagna,Libres 1,13:30,13:30
+F1,17 mayo,Emilia Romagna,Libres 2,17:00,17:00
+F1,18 mayo,Emilia Romagna,Libres 3,12:30,12:30
+F1,18 mayo,Emilia Romagna,Clasificación,16:00,16:00
+F1,19 mayo,Emilia Romagna,Carrera,15:00,15:00
+F1,23 mayo,Mónaco,Libres 1,13:30,13:30
+F1,24 mayo,Mónaco,Libres 2,17:00,17:00
+F1,25 mayo,Mónaco,Libres 3,12:30,12:30
+F1,25 mayo,Mónaco,Clasificación,16:00,16:00
+F1,26 mayo,Mónaco,Carrera,15:00,15:00
+...
+
