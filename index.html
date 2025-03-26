@@ -141,7 +141,10 @@
                 if (cols.length < 5) return;
 
                 const [categoria, fecha, granPremio, nombre, hora] = cols.map(col => col.trim());
-                const eventDate = new Date(fecha);
+                const parts = fecha.split('-'); // dd-mm-aaaa
+                // Reorganizar la fecha a formato aaaa-mm-dd
+                const formattedDate = `${${parts[1]}-${parts[0]-$parts[2}`;
+                const eventDate = new Date(formattedDate);
 
                 // Si no se selecciona ningún filtro, se muestra todo
                 if (selectedCategory !== 'all' && categoria !== selectedCategory) return;
