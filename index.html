@@ -88,6 +88,7 @@
         </select>
 
         <select id="timeFilter">
+            <option value="all">Sin filtro de tiempo</option>
             <option value="weekend">Próximo fin de semana</option>
             <option value="6days">Próximos 6 días</option>
             <option value="month">Un mes</option>
@@ -142,8 +143,9 @@
                 const [categoria, fecha, granPremio, nombre, hora] = cols.map(col => col.trim());
                 const eventDate = new Date(fecha);
 
+                // Si no se selecciona ningún filtro, se muestra todo
                 if (selectedCategory !== 'all' && categoria !== selectedCategory) return;
-                if (!isWithinSelectedTime(eventDate, selectedTime)) return;
+                if (selectedTime !== 'all' && !isWithinSelectedTime(eventDate, selectedTime)) return;
 
                 const tr = document.createElement('tr');
                 [categoria, fecha, granPremio, nombre, hora].forEach(col => {
@@ -191,9 +193,6 @@
             document.getElementById('calendarTab').style.display = tab === 'calendar' ? 'block' : 'none';
         }
 
-
-        loadSchedule();
-        
         function generateCalendar(events) {
             const calendarContainer = document.getElementById('calendarContainer');
             calendarContainer.innerHTML = '';
@@ -225,10 +224,8 @@
                 calendarContainer.appendChild(monthDiv);
             });
         }
-        
-        // Llama a la función dentro de loadSchedule() después de llenar la tabla
-        loadSchedule().then(events => generateCalendar(events));
 
+        loadSchedule().then(events => generateCalendar(events));
     </script>
 </body>
 </html>
